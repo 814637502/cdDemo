@@ -4,7 +4,7 @@ from collections import Iterator
 __author__ = 'sunyawei'
 
 
-a=dict() # 传入关键字 desss
+a=dict() # 传入关键字 dessssdasdasd
 b=dict({"A":"a","B":"b","C":"c","D":"d","E":"e"})# 映射函数方式来构造字典
 c=dict(zip(["A","B","C"],["a","b","c"])) # 可迭代对象方式来构造字典
 d=dict([("A","a"),("B","b"),("C","c")]) # 可迭代对象方式来构造字典
