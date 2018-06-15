@@ -43,19 +43,21 @@ people01 = people__mapping
 # ]}
 # }}
 ''''''
-query={"query":{"filtered":{{"filter":{"range":{"weight":{"lt":"130"}}}},
-                            {"query":{"match":{"name":"玲妹妹"}}},
-                            }}}
+query = {"query": {"filtered": {    {"filter": {"range": {"weight": {"lt": "130"}}}},
+                                    {"query": {"match": {"name": "玲妹妹"}}}
+                                }
+                   }
+        }
 
 
 print(query)
-a=es.search(index=None,doc_type=None,body=query)
+a = es.search(index=None, doc_type=None, body=query)
 print("a==============  "+json.dumps(a))
 for aa in a['hits']['hits']:
 
     print(aa['_source'])
     pass
-query={"query":{"range":{"weight":{"lt":130}}}}
+query = {"query": {"range": {"weight": {"lt": 130}}}}
 
 # count =es.delete_by_query(index=None,body=query,doc_type=None,id=None)
 # print("a==============  "+json.dumps(count['hits']['hits']))

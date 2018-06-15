@@ -34,3 +34,10 @@ print("================================== 时间戳  转 datetime.datetime======
 # 2018-05-28 18:06:30
 t = 1527501990315*0.001
 print(datetime.datetime.fromtimestamp(t))
+
+print("================================== 时间字符串  转 时间戳============================================")
+str_time = "2018-05-26 02:30:59"
+str2_time = "2018-05-30 02:30:59"
+print(time.mktime(time.strptime(str_time, '%Y-%m-%d %H:%M:%S')))
+print(time.mktime(time.strptime(str2_time, '%Y-%m-%d %H:%M:%S')))
+time.strftime()
