@@ -9,23 +9,21 @@ __author__ = 'sunyawei'
 
 es = Elasticsearch('localhost:9200');
 # 这里是可以定义好模板的，定义好模板就可以直接加到index中
-st_people=dict({"name":"syw","sex":"very man","weight":'135'})
+st_people=dict({"name": "syw", "sex": "very man", "weight": '135'})
 people__mapping={
-    "name":"林妹妹",
-    "sex":"man",
-    "weight":"135"
-
-
+    "name": "林妹妹",
+    "sex": "man",
+    "weight": "135"
 }
 
 
-# 如果索引不存在，则创建索引
+# 如果索引不存在，则创建索引sssssssssssssssss
 
 if es.indices.exists(index='syw-index') is not True:
     es.create(index="syw-index", doc_type="syw_type",
-              id="001",body=st_people)
+              id="001", body=st_people)
 # people__mapping["name"]="sunaywei .
-people__mapping["weight"]="120"
+people__mapping["weight"] = "120"
 people01 = people__mapping
 # es.index(index="syw-index",body=people01,id=None,doc_type="syw_type")
 # es.index(index="syw-index",body=people01,id=None,doc_type="syw_type")
@@ -43,8 +41,7 @@ people01 = people__mapping
 # ]}
 # }}
 ''''''
-query = {"query": {"filtered": {    {"filter": {"range": {"weight": {"lt": "130"}}}},
-                                    {"query": {"match": {"name": "玲妹妹"}}}
+query = {"query": {"filtered": {{"filter": {"range": {"weight": {"lt": "130"}}}}, {"query": {"match": {"name": "玲妹妹"}}}
                                 }
                    }
         }
